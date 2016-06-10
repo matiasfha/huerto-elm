@@ -1,0 +1,221 @@
+.container {
+  max-width: 960px;
+}
+
+.bg-overlay {
+  background: rgba(0, 0, 0, 0.2);
+  height: 100%;
+}
+
+.lil-line {
+  height: 2px;
+  margin: 15px auto;
+  width: 20%;
+  display: block;
+  background: white;
+}
+
+.btn {
+  font-family: 'Gentium Basic', serif;
+  font-weight: 400;
+  font-size: 1.2em;
+  color: white;
+  background: #4A4A4A;
+  padding: 10px 20px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  color: white;
+  -webkit-box-shadow: 0px 0px 0px 0px transparent;
+  -moz-box-shadow: 0px 0px 0px 0px transparent;
+  box-shadow: 0px 0px 0px 0px transparent;
+}
+
+.card-product a, .card-news a {
+  text-decoration: none !important;
+}
+.card, .card-product, .card-news {
+  background: white;
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 5px;
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.card:hover, .card-product:hover, .card-news:hover {
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.6);
+  -webkit-transform: scale(1.01);
+  -moz-transform: scale(1.01);
+  -o-transform: scale(1.01);
+  transform: scale(1.01);
+}
+.card .content, .card-product .content, .card-news .content {
+  padding: 14px 12px;
+  text-decoration: none;
+}
+.card .content h5, .card-product .content h5, .card-news .content h5 {
+  font-family: 'Gentium Basic', serif;
+  font-weight: 700;
+  font-size: 1.3em;
+  color: #4A4A4A;
+  text-decoration: none;
+}
+.card .content p, .card-product .content p, .card-news .content p, .card .content li, .card-product .content li, .card-news .content li {
+  font-family: 'Gentium Basic', serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: #999;
+  text-decoration: none;
+}
+.card .content ul, .card-product .content ul, .card-news .content ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.8em;
+  text-decoration: none;
+}
+
+header {
+  background: #7385a6 url(../images/bg-header.png) center center no-repeat;
+  height: 100vh;
+  display: block;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+header nav {
+  padding: 10px 0;
+}
+header nav h1 a, header nav .btn-menu {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 0.6em;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 10px;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+header nav h1 a:hover, header nav .btn-menu:hover {
+  color: white;
+  text-decoration: none;
+}
+header nav h1 {
+  margin: 0;
+}
+header nav .btn-menu {
+  font-size: 2em;
+  margin: 5px 10px;
+}
+header h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 4.5em;
+  color: white;
+  margin-top: 240px;
+}
+
+footer {
+  background: #323C4E;
+  padding: 10px 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1em;
+  font-family: Arial, 'sans-serif';
+}
+
+.section {
+  padding: 80px 0;
+}
+.section h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 2em;
+  color: #4A4A4A;
+  margin-bottom: 20px;
+}
+.section h3 i {
+  margin-bottom: 10px;
+}
+.section .btn {
+  margin: 20px 0 0;
+}
+
+.yellow {
+  background: #FBF7CB;
+}
+.yellow h3 {
+  color: #C87925;
+}
+.yellow .btn {
+  background: #C87925;
+}
+.yellow .btn:hover {
+  background: #9d5f1d;
+}
+
+.green {
+  background: #CBDDCF;
+}
+.green h3 {
+  color: #323C4E;
+}
+.green .btn {
+  background: #323C4E;
+}
+.green .btn:hover {
+  background: #1e242f;
+}
+
+.about {
+  background: #323C4E url(../images/bg-about.png) center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 500px;
+}
+.about p {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 1.6em;
+  color: white;
+  margin: 100px 0;
+}
+
+.card-product {
+  margin: 10px 0;
+}
+.card-product a {
+  text-decoration: none;
+}
+.card-product .picture {
+  background: #7385a6 center no-repeat;
+  height: 180px;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.card-news .col-sm-2, .card-news .col-sm-10 {
+  padding: 0;
+}
+.card-news .picture {
+  background: #7385a6 center no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  min-height: 140px;
+}
