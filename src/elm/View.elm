@@ -18,5 +18,7 @@ view model =
       newsPage model
     Router.ProductsRoute ->
       productsPage model
-    Router.NotFoundRoute ->
+    Router.AdminRoute ->
+      adminPage model
+    _ ->
       homepage model --TODO

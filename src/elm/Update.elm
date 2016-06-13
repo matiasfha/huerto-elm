@@ -8,6 +8,7 @@ import Router
 -- Components
 import Components.Productos.Update as Products
 import Components.News.Update as News
+import Components.Admin.Update as Admin
 
 -- UPDATE
 
@@ -32,5 +33,12 @@ update message model =
           News.update subMsg model.news
       in
         ( { model | news = updated}, Cmd.map NewsMsg cmd)
+    AdminMsg subMsg ->
+      let
+        ( updated, cmd) =
+          Admin.update subMsg model
+      in
+        (model, Cmd.none)
+
     None ->
       (model, Cmd.none)

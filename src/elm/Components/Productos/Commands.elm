@@ -8,6 +8,7 @@ import Components.Productos.Models exposing (Product, itemDecoder, itemEncoded)
 import Components.Productos.Messages exposing (..)
 
 
+
 fetchAll : Cmd Msg
 fetchAll =
   Rest.fetchTask fetchAllUrl collectionDecoder

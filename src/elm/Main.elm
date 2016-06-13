@@ -6,9 +6,8 @@ import Model exposing (..)
 import Messages exposing (Msg(..))
 import View exposing (view)
 import Update exposing (update)
+import Commands exposing (..)
 
-import Components.News.Commands as News
-import Components.Productos.Commands as Products
 
 -- SUBSCRIPTIONS
 subscriptions : a -> Sub b
@@ -16,35 +15,39 @@ subscriptions = \_ -> Sub.none
 
 init : ( Router.Route, Hop.Types.Location ) -> ( Model, Cmd Msg )
 init ( route, location ) =
+  let
+    model = initialModel location route
+  in
   case route of
     Router.MainRoute ->
-      let
-        newsCmd = Cmd.map NewsMsg News.fetchSome
-        productsCmd = Cmd.map ProductsMsg Products.fetchSome
-      in
-        ( initialModel location route, Cmd.batch [newsCmd, productsCmd])
+      ( model, Cmd.batch [newsCmdSome , productsCmdSome])
+    Router.AdminRoute ->
+      ( model, Cmd.batch [newsCmdSome, productsCmdSome])
     Router.NewsRoute ->
-      ( initialModel location route, Cmd.map NewsMsg News.fetchAll)
+      ( model, newsCmdAll)
     Router.ProductsRoute ->
-      ( initialModel location route, Cmd.map ProductsMsg Products.fetchAll)
-    Router.NotFoundRoute ->
+      ( model, productsCmdAll)
+    _ ->
       ( initialModel location route, Cmd.none)
+
+
 
 urlUpdate : ( Router.Route, Hop.Types.Location ) -> Model -> ( Model, Cmd Msg)
 urlUpdate (route, location) model =
   let
-    newsCmd = Cmd.map NewsMsg News.fetchAll
-    productsCmd = Cmd.map ProductsMsg Products.fetchAll
+    newModel = { model | routing = Router.Model location route }
   in
-    case (Debug.log "route" route) of
-      Router.NotFoundRoute ->
-        ( { model | routing = Router.Model location route }, Cmd.none)
+    case route of
       Router.MainRoute ->
-        ( { model | routing = Router.Model location route }, Cmd.batch [newsCmd, productsCmd])
+        ( newModel, Cmd.batch [newsCmdSome, productsCmdSome])
+      Router.AdminRoute ->
+        ( newModel, Cmd.batch [newsCmdSome, productsCmdSome])
       Router.NewsRoute ->
-        ( { model | routing = Router.Model location route }, newsCmd)
+        ( newModel, newsCmdAll)
       Router.ProductsRoute ->
-        ( { model | routing = Router.Model location route }, productsCmd)
+        ( newModel, productsCmdAll)
+      _ ->
+        ( newModel, Cmd.none)
 
 
 main: Program Never

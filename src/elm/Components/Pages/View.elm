@@ -1,4 +1,4 @@
-module Components.Pages.View exposing (..)
+module Components.Pages.View exposing (homepage, newsPage, productsPage, adminPage)
 import Html exposing (..)
 import Html.App
 
@@ -11,6 +11,7 @@ import Components.Productos.View as Productos
 import Components.About.View as About
 import Components.News.View as News
 import Components.Footer.View as Footer
+import Components.Admin.View as Admin
 
 homepage : Model -> Html Msg
 homepage model =
@@ -37,3 +38,9 @@ productsPage model =
     , Html.App.map ProductsMsg (Productos.fullView model.products)
     , Footer.view
     ]
+
+adminPage : Model -> Html Msg
+adminPage model =
+  div [] [
+    Admin.view model
+  ]
