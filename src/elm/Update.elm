@@ -46,12 +46,12 @@ update message model =
           Login.update subMsg model
       in
         ( updated, Cmd.map LoginMsg cmd)
-    -- LoggedIn data ->
-    --   let
-    --     ( updated, cmd) =
-    --       Login.onLogin data model
-    --   in
-    --     (updated, Cmd.map LoggedIn cmd)
+    LoggedIn data ->
+      let
+        ( updated, cmd) =
+          Login.onLogin data model
+      in
+        (updated, Cmd.map LoggedIn cmd) --TODO This FAILS
     None ->
       (model, Cmd.none)
 

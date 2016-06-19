@@ -12,7 +12,7 @@ import Ports exposing (..)
 -- SUBSCRIPTIONS
 subscriptions : Model -> Sub Msg
 subscriptions model =
-  loggedin UserData
+  loggedin LoggedIn
 
 init : ( Router.Route, Hop.Types.Location ) -> ( Model, Cmd Msg )
 init ( route, location ) =

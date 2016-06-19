@@ -20,3 +20,4 @@ type Msg =
   | ProductsMsg Components.Productos.Messages.Msg
   | AdminMsg Components.Admin.Messages.Msg
   | LoginMsg Components.Login.Messages.Msg
+  | LoggedIn UserData
