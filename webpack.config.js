@@ -47,7 +47,15 @@ var commonConfig = {
 
   module: {
     loaders: [
-      { test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery' }
+      { test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery' },
+      {
+        test: /\.js$/,
+        exclude: [/node_modules/, /bootstrap\/js\//],
+        loader:'babel-loader',
+        query:{
+          presets:['es2015']
+        }
+      }
     ]
   }
 

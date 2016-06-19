@@ -3,7 +3,6 @@ module Components.Productos.Models exposing (..)
 import Json.Decode as Decode exposing ((:=))
 import Json.Encode as Encode
 
-
 type alias Product =
   {id : Int
   ,image: String

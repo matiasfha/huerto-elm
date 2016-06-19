@@ -5,11 +5,22 @@ import Hop.Types exposing (Config, Query, Location, PathMatcher, Router)
 import Hop.Matchers exposing (..)
 
 -- ROUTES
+type AdminSubRoutes
+  = News
+  | Products
+  | NewProduct
+  | NewNews
+  | UpdateProduct Int
+  | UpdateNews Int
+
 type Route
   = MainRoute
   | NewsRoute
   | ProductsRoute
   | NotFoundRoute
+  | Login
+  | Admin
+  | AdminRoutes (AdminSubRoutes)
 
 --- Model
 type alias Model =
@@ -31,11 +42,24 @@ update msg model =
       ( model, navigationCmd path)
 
 -- MATCHERS
+adminMatchers : List (PathMatcher AdminSubRoutes)
+adminMatchers =
+  [ match1 News "/news"
+  , match1 Products "/products"
+  , match1 NewProduct "/products/new" --TODO NEED MORE NESTING
+  , match1 NewNews "/products/new"
+  , match2 UpdateNews "/news/" int
+  , match2 UpdateProduct "/products" int
+  ]
+
 matchers : List (PathMatcher Route)
 matchers =
   [ match1 MainRoute ""
   , match1 NewsRoute "/news"
   , match1 ProductsRoute "/products"
+  , match1 Admin "/admin"
+  , match1 Login "/login"
+  , nested1 AdminRoutes "/admin" adminMatchers
   ]
 
 -- RouterConfig

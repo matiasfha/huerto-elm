@@ -20,3 +20,9 @@ view model =
       productsPage model
     Router.NotFoundRoute ->
       homepage model --TODO
+    Router.Login ->
+      loginPage model
+    Router.Admin ->
+      adminPage model Nothing
+    Router.AdminRoutes subRoute ->
+      adminPage model (Just subRoute)

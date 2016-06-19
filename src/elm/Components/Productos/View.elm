@@ -19,10 +19,6 @@ list item =
       i [ classList [ ("fa",True), ("fa-leaf", True), ("fa-fw", True)]][]
       , (text item.quality)
     ]
-    -- ,li [][
-    --   i [ classList [ ("fa",True), ("fa-rocket", True), ("fa-fw", True)]][]
-    --   , (text "Lorem ipsum")
-    -- ]
   ]
 
 showMarkdown : String -> Bool -> Html Msg
